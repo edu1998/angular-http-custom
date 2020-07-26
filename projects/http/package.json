@@ -3,6 +3,7 @@
   "version": "0.0.6",
   "repository": "https://github.com/edu1998/angular-http-custom",
   "homepage": "https://github.com/edu1998/angular-http-custom",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^10.0.5",
     "@angular/core": "^10.0.5"
