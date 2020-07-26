@@ -3,5 +3,5 @@
  */
 
 export * from './lib/services/http.service';
-// export * from './lib/http.component';
-// export * from './lib/http.module';
+export * from './lib/http.component';
+export * from './lib/http.module';
