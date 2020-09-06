@@ -1,27 +1,26 @@
 import {Inject, Injectable, Optional} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {HttpType} from '../resources/types/http.type';
-import {ResponseHttpType} from '../resources/types/response-http.type';
+import {responseHttp, ResponseHttpType} from '../resources/types/response-http.type';
 import {CONFIG_MODULE, HTTP_OPTIONS_OBSERVE_RESPONSE} from '../resources/constants/label.constants';
 import {ConfigType} from '../resources/types/config.type';
+import {Observable} from 'rxjs';
 
-type responseHttp<T> = Observable<ResponseHttpType<T>>;
 
 @Injectable({
   providedIn: 'root'
 })
-export class HttpServices implements HttpType {
+export class HttpServices<F> {
   private _apiUrl: string;
 
   constructor(private http: HttpClient, @Inject(CONFIG_MODULE) @Optional() private config?: ConfigType) {
     if (config) { this.apiUrl = config.baseUrl; }
   }
 
-  public get<T>(url: string = '', headers?: HttpHeaders): responseHttp<T> {
+  public get<T>(url: string = '', headers?: HttpHeaders): Observable<F> | responseHttp<T> {
     return this.http
-      .get<ResponseHttpType<T>>(`${this._apiUrl + url}`, {
+      .get<F>(`${this._apiUrl + url}`, {
         observe: HTTP_OPTIONS_OBSERVE_RESPONSE,
         headers
       })
