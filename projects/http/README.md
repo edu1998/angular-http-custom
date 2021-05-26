@@ -1,15 +1,14 @@
 # Http
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+This library was generated with [Angular CLI] to encapsulate all the http connection logic that angular applications handle
 
-## Code scaffolding
-
-Run `ng generate component component-name --project http` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project http`.
-> Note: Don't forget to add `--project http` or else it will be added to the default project in your `angular.json` file. 
-
-## Build
+## Use in local
 
 Run `ng build http` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `npm link` in the `dist/http` folder
+Run `npm link @edutor/http` in the project to be used
+
+Note: if we want that we change them to be activated automatically we must configure the option `--watch` like this` ng build http --watch` 
 
 ## Publishing
 

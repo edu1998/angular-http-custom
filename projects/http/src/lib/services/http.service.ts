@@ -13,7 +13,10 @@ import {ConfigType} from '../resources/types/config.type';
 export class HttpServices implements HttpType {
   private _apiUrl: string;
 
-  constructor(private http: HttpClient, @Inject(CONFIG_MODULE) @Optional() private config?: ConfigType) {
+  constructor(
+    private http: HttpClient,
+    @Inject(CONFIG_MODULE) @Optional() private config?: ConfigType
+  ) {
     if (config) { this.apiUrl = config.baseUrl; }
   }
 

@@ -8,4 +8,3 @@ export * from './lib/http.module';
 
 export {responseHttp} from './lib/resources/types/response-http.type';
 
-

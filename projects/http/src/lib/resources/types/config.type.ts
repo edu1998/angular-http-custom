@@ -1,3 +1,3 @@
 export interface ConfigType {
-  baseUrl : string
+  baseUrl: string;
 }
