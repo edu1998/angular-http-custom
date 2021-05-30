@@ -10,7 +10,7 @@ import {ConfigType} from '../resources/types/config.type';
 @Injectable({
   providedIn: 'root'
 })
-export class HttpServices implements HttpType {
+export class HttpServices implements HttpType{
   private _apiUrl: string;
 
   constructor(
